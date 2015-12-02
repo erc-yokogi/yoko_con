@@ -1,0 +1,27 @@
+<h1>Wellcome Contracts</h1>
+<p>Find me in app/views/contracts/index.html.erb</p>
+
+<%= will_paginate %>
+
+<ul class="contracts">
+  <%#= render @contracts %>
+<% @contracts.each do |contract| %>
+
+<li>
+  <%#= gravatar_for contract, size: 52 %>
+  <%#= link_to contract.itakumoto, contract %>
+  <%= contract.itakumoto %>
+  <%= contract.itakusaki %>
+
+  <%= link_to "Refer", contract %>
+     <%= link_to "Delete", contract, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+
+</li>
+<% end %>
+
+</ul>
+
+<%= will_paginate %>
+
+<li><%= link_to "NewContract", concreate_path %></li>

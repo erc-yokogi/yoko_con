@@ -1,0 +1,23 @@
+<h1>Contracts#new</h1>
+<p>Find me in app/views/contracts/new.html.erb</p>
+
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@contract) do |f| %>
+
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :itakumoto %>
+      <%= f.text_field :itakumoto %>
+
+      <%= f.label :itakusaki %>
+      <%= f.text_field :itakusaki %>
+
+
+      <%= f.submit "Create Contract", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<li><%= link_to "Back to ContractsList", root_path %></li>

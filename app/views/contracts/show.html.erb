@@ -1,0 +1,32 @@
+
+<%
+=begin
+%>
+<%= @contract.itakumoto %>, <%= @contract.itakusaki %>
+<%
+=end
+%>
+
+
+<div class="row">
+  <aside class="span8">
+    <section>
+      <h3>
+        itakumoto:<%= @contract.itakumoto %><br>
+        itakusaki:<%= @contract.itakusaki %>
+      </h3>
+    </section>
+  </aside>
+
+
+</div>
+
+<div class="link">
+<h3>
+<li><%= link_to "ChangeThis", edit_contract_path(current_contract) %></li>
+<li><%= link_to "ContractsList", root_path %></li>
+</h3>
+</div>
+
+     <%= link_to "delete", current_contract, method: :delete,
+                                  data: { confirm: "You sure?" } %>
