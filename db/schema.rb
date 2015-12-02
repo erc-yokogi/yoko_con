@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151127101900) do
+ActiveRecord::Schema.define(version: 20151202015516) do
 
   create_table "contracts", force: true do |t|
     t.string   "itakumoto"
     t.string   "itakusaki"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "itakustart"
+    t.string   "itakuend"
   end
 
 end

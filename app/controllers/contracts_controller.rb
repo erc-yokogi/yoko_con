@@ -55,7 +55,7 @@ class ContractsController < ApplicationController
   private
 
     def contract_params
-      params.require(:contract).permit(:itakumoto, :itakusaki)
+      params.require(:contract).permit(:itakumoto, :itakusaki, :itakustart, :itakuend)
     end
 
 end
