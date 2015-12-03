@@ -18,8 +18,20 @@ class ContractsController < ApplicationController
   end
 
   def index
-    @contracts = Contract.paginate(page: params[:page])
-    #contracts = Contract.all
+
+# branch prep_search 2015/12/02
+    if params[:search]
+      jyoken = params[:search]
+      sql = 'SELECT C.* FROM contracts C WHERE itakumoto LIKE ?', "%#{jyoken}%"
+     #byebug
+     #@contracts = Contract.search(params[:search])
+     @contracts = Contract.paginate_by_sql(sql,:page => params[:page], :per_page => 5)
+
+# branch prep_search 2015/12/02 end
+    else
+     @contracts = Contract.paginate(page: params[:page],:per_page => 5)
+    end
+
   end
 
   def show

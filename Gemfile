@@ -16,6 +16,10 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 #2015/11/09 add END
 
+#2015/12/02
+#gem 'kaminari', '~> 0.14.1'
+#2015/12/02 end
+
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 
@@ -49,7 +53,7 @@ gem 'coffee-rails', '~> 4.0.1'
 #gem 'jquery-rails'
 gem 'jquery-rails', '3.0.4'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks', '1.1.1'
+gem 'turbolinks', '2.2.3'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 #gem 'jbuilder', '~> 2.0'
 gem 'jbuilder', '1.0.2'

@@ -12,11 +12,24 @@
   <aside class="span8">
     <section>
       <h3>
-        itakumoto:<%= @contract.itakumoto %><br>
-        itakusaki:<%= @contract.itakusaki %><br>
-
-        itakustart:<%= @contract.itakustart %><br>
-        itakuend:<%= @contract.itakuend %>
+      <table>
+       <tr>
+        <td>
+        itakumoto</td><td><%= @contract.itakumoto %></td>
+       </tr>
+       <tr>
+        <td>
+        itakusaki</td><td><%= @contract.itakusaki %></td>
+       </tr>
+       <tr>
+        <td>
+        itakustart</td><td><%= @contract.itakustart %></td>
+       </tr>
+       <tr>
+        <td>
+        itakuend</td><td><%= @contract.itakuend %></td>
+       </tr>
+      </table>
       </h3>
     </section>
   </aside>
@@ -25,10 +38,10 @@
 </div>
 
 <div class="link">
-<h3>
+<h4>
 <li><%= link_to "ChangeThis", edit_contract_path(current_contract) %></li>
 <li><%= link_to "ContractsList", root_path %></li>
-</h3>
+</h4>
 </div>
 
      <%= link_to "delete", current_contract, method: :delete,
