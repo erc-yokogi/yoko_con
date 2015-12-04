@@ -5,7 +5,9 @@
   <p>
     itakumoto_search
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :itakumoto => nil %>
+    itakusaki_search
+    <%= text_field_tag :searchsaki, params[:searchsaki] %>
+    <%= submit_tag "Search", :itakumoto => nil ,:itakusaki => nil  %>
   </p>
 <% end %>
 
@@ -58,4 +60,6 @@
 
 <%= will_paginate %>
 
+<h2>
 <li><%= link_to "NewContract", concreate_path %></li>
+</h2>
