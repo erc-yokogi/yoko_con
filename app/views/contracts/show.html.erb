@@ -1,3 +1,5 @@
+<h1>Contract Details</h1>
+<p>Find me in app/views/contracts/show.html.erb</p>
 
 <%
 =begin
@@ -11,26 +13,29 @@
 <div class="row">
   <aside class="span8">
     <section>
-      <h3>
+
       <table>
        <tr>
-        <td>
+        <td width = '75'>
         itakumoto</td><td><%= @contract.itakumoto %></td>
        </tr>
        <tr>
-        <td>
+        <td width = '75'>
         itakusaki</td><td><%= @contract.itakusaki %></td>
        </tr>
+      </table>
+      <br>
+      <table>
        <tr>
         <td>
-        itakustart</td><td><%= @contract.itakustart %></td>
-       </tr>
-       <tr>
+        itakustart:</td><td width = '100'><%= @contract.itakustart %></td>
+
         <td>
-        itakuend</td><td><%= @contract.itakuend %></td>
+        itakuend:</td><td width = '100'><%= @contract.itakuend %></td>
+
        </tr>
       </table>
-      </h3>
+
     </section>
   </aside>
 
