@@ -15,3 +15,8 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+js
+function link_to(link) {
+  location.href = link;
+}
