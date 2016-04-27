@@ -1,0 +1,5 @@
+ja:
+  validation:
+    contract:
+      contract_haikibutsu:
+        invalid_contract_kikan: "委託期間の開始日と終了日より後の日になっています！"

@@ -1,10 +1,44 @@
 class Contract < ActiveRecord::Base
+  #2016/02/10 add
+  #include Validation::Loader
 
   #set_primary_key :id
-
+  #has_many :contracthaikibutsus
+  has_many :items, dependent: :destroy
   validates :itakumoto,  presence: true, length: { maximum: 50 }
   validates :itakusaki, presence: true, length: { maximum: 20 }
 
+  #2016/02/12 add
+ validate :contract_kikan_reverse
+ validate :add_error_sample
+
+
+  def contract_kikan_reverse
+    #return true if self.itakustart.nil? || ! self.itakustart.is_a?(Date)
+    if itakustart.to_date <= itakuend.to_date
+      #true
+      #@contract.valid = false
+    else
+      ##return [false, ::I18n.t(:invalid_contract_kikan, scope: "validation.contract.contract_kikan")]
+      #false
+      #@contract.valid?
+      #errors.add(:itakustart, "に関係するエラーを追加")
+      #errors[:base] << "モデル全体に関係するエラーを追加"
+    end
+  end
+
+  def add_error_sample
+    # nameが空のときにエラーメッセージを追加する
+    if itakusaki.empty?
+      #errors.add(:itakustart, "に関係するエラーを追加")
+      #errors[:base] << "モデル全体に関係するエラーを追加"
+    end
+  end
+  #2016/02/12 add end
+
+  #2016/02/10 add
+  #load_validation_group Validation::Contract::IncidentValidation, [:contract_detail]
+  #load_validation_group Validation::Contract::IncidentValidation
 # branch prep_search 2015/12/02
 
  def self.search(search)

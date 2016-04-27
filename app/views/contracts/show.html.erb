@@ -11,6 +11,8 @@
 
 
 <div class="row">
+      <%= render "/shared/error_seigosei_messages", error_messages: flash[:error] %>
+
   <aside class="span8">
     <section>
 
@@ -42,10 +44,23 @@
 
 </div>
 
+<br><br>
+
+  contract_haikibutsu
+
+    <%= render @contract.items %>
+
+<br><br>
+  Add a haikibutsu:
+  <%= render "items/form" %>
+
+
+<br><br>
 <div class="link">
 <h4>
 <li><%= link_to "ChangeThis", edit_contract_path(current_contract) %></li>
 <li><%= link_to "ContractsList", root_path %></li>
+<br><br>
 <%= link_to 'ChangeThis', edit_contract_path, class: 'btn btn-left' %>
 <%= link_to 'BackToList', root_path, class: 'btn btn-left btn-inverse' %>
 </h4>

@@ -16,6 +16,11 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 #2015/11/09 add END
 
+#2016/02/10 add
+#gem 'carrierwave-datamapper', :require => 'carrierwave/datamapper'
+#gem 'carrierwave', '~>0.6.0'
+#2016/02/10 add end
+
 #2015/12/02
 #gem 'kaminari', '~> 0.14.1'
 #2015/12/02 end

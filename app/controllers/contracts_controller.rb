@@ -75,6 +75,9 @@ class ContractsController < ApplicationController
 
   def show
     @contract = Contract.find(params[:id])
+    #2016/02/10 add seigoseierror
+    #flash.now[:error] = build_error_messages
+
   end
 
   def edit
@@ -88,6 +91,7 @@ class ContractsController < ApplicationController
       flash[:success] = "Profile updated"
       redirect_to @contract
     else
+      #flash.now[:error] = build_error_messages
       render 'edit'
     end
 
@@ -101,6 +105,14 @@ class ContractsController < ApplicationController
     Contract.find(params[:id]).destroy
     flash[:success] = "Contract deleted."
     redirect_to contracts_url
+  end
+
+  #2016/02/10 add method
+  def build_error_messages
+    messages = []
+    messages += @contract.errors[:base] unless @contract.valid?#(:contract_detail)
+    messages
+#    #messages = ["kikan error"]
   end
 
   private

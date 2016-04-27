@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202015516) do
+ActiveRecord::Schema.define(version: 20160427051713) do
+
+  create_table "contract_haikibutsus", force: true do |t|
+    t.string   "haikibutsu"
+    t.string   "suryo"
+    t.string   "tanka"
+    t.integer  "contract_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "contract_haikibutsus", ["contract_id"], name: "index_contract_haikibutsus_on_contract_id"
 
   create_table "contracts", force: true do |t|
     t.string   "itakumoto"
@@ -21,5 +32,16 @@ ActiveRecord::Schema.define(version: 20151202015516) do
     t.string   "itakustart"
     t.string   "itakuend"
   end
+
+  create_table "items", force: true do |t|
+    t.string   "item"
+    t.string   "tanka"
+    t.string   "suryo"
+    t.integer  "contract_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "items", ["contract_id"], name: "index_items_on_contract_id"
 
 end

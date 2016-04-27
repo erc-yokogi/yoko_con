@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :contracts
+  resources :contracts do
+    #resources :contracthaikibutsus
+    resources :items
+  end
 
 
   root 'contracts#index'
