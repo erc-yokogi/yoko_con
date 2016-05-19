@@ -50,7 +50,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
@@ -203,4 +203,44 @@ input {
   @extend .control-group;
   @extend .error;
 }
+
+/* navbar ---------------------------------------*/
+
+@mixin navibar-color{
+	background: #F52120;
+	background: -moz-linear-gradient(top, #C40304, #F52120);
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#C40304), to(#F52120));
+	background: -webkit-linear-gradient(top, #C40304, #F52120);
+	background: -o-linear-gradient(top, #C40304, #F52120);
+	background: linear-gradient(to bottom, #C40304, #F52120);
+	-pie-background: linear-gradient(to bottom, #C40304, #F52120)!important;
+	behavior:url(/assets/PIE.htc);
+}
+
+.navbar-inner {
+	@include navibar-color;
+
+	min-height:38px;
+	border-radius:0;
+	color:#EEE;
+	background-repeat: repeat-x;
+	border-color:#C40304;
+
+    background-color: #C40304;
+    color: #FFF;
+}
+
+.navbar-inner.user-info {
+	@include navibar-color;
+
+	min-height:38px;
+	border-radius:0;
+	color:#EEE;
+	background-repeat: repeat-x;
+	border-color:#C40304;
+
+    background-color: #000;
+    color: #FFF;
+}
+
 

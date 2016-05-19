@@ -1,4 +1,5 @@
-<h1>Create New Contract</h1>
+<br>
+<h2>Create New Contract</h2>
 <p>Find me in app/views/contracts/new.html.erb</p>
 
 
@@ -10,11 +11,13 @@
 
       <!--<%= f.label :itakumoto %>-->
       <label class="control-label width-auto">itakumoto <span class="required"><font color = 'red'>*neccesary</font></span></label>
+<%= render 'shared/label/gyoshu', gyoshu_division: 'HAISHUTSU' %>
       <%= f.text_field :itakumoto %>
       <label class="control-label width-auto">   <span class="required">test comment  when saisei baikyakusaki</span></label>
 
       <!--<%= f.label :itakusaki %>-->
       <label class="control-label width-auto">itakusaki<span class="required"><font color = 'red'>*neccesary</font></span></label>
+<%= render 'shared/label/gyoshu', gyoshu_division: 'SHORI' %>
       <%= f.text_field :itakusaki %>
 
       <%= f.label :itakustart %>

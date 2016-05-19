@@ -1,5 +1,5 @@
-
-<h1>Update Contract Info</h1>
+<br>
+<h2>Update Contract Info</h2>
 
 <div class="row">
   <div class="span6 offset3">
@@ -8,9 +8,11 @@
       <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label :itakumoto %>
+<%= render 'shared/label/gyoshu', gyoshu_division: 'HAISHUTSU' %>
       <%= f.text_field :itakumoto %>
 
       <%= f.label :itakusaki %>
+<%= render 'shared/label/gyoshu', gyoshu_division: 'SHORI' %>
       <%= f.text_field :itakusaki %>
 
       <%= f.label :itakustart %>

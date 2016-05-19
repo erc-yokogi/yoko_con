@@ -3,9 +3,22 @@
     <div class="container">
       <%= link_to "er-contract", '#', id: "logo" %>
       <nav>
+        <!--<ul role="navigation" class="nav" style="">-->
         <ul class="nav pull-right">
-          <li><%= link_to "NewContract", concreate_path %></li>
+          <li><%= link_to "ERC Hachi", '#' %></li>
+          <li><%= link_to "SoshikiSelect", '#' %></li>
+          <li><%= link_to "Manual", '#' %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="navbar-inner user-info">
+    <div class="container">
+      <nav>
+        <ul class="nav pull-left">
           <li><%= link_to "Tsuchi", '#' %></li>
+          <li><%= link_to "NewContract", concreate_path %></li>
           <li><%= link_to "Syonin_Irai", '#' %></li>
 
             <li><%= link_to "Users", '#' %></li>
@@ -32,5 +45,7 @@
         </ul>
       </nav>
     </div>
+
   </div>
+
 </header>

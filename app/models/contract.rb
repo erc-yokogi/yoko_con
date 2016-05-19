@@ -7,6 +7,8 @@ class Contract < ActiveRecord::Base
   has_many :items, dependent: :destroy
   validates :itakumoto,  presence: true, length: { maximum: 50 }
   validates :itakusaki, presence: true, length: { maximum: 20 }
+  #validates :itakustart,  presence: true
+  #validates :itakuend, presence: true
 
   #2016/02/12 add
  validate :contract_kikan_reverse
@@ -15,15 +17,21 @@ class Contract < ActiveRecord::Base
 
   def contract_kikan_reverse
     #return true if self.itakustart.nil? || ! self.itakustart.is_a?(Date)
-    if itakustart.to_date <= itakuend.to_date
-      #true
-      #@contract.valid = false
+    if itakustart.blank? || itakuend.blank?
+      #raise RuntimeError.new("itakukikan is null")
+       errors.add(:itakustart, "itakukikan is null")
     else
-      ##return [false, ::I18n.t(:invalid_contract_kikan, scope: "validation.contract.contract_kikan")]
-      #false
-      #@contract.valid?
-      #errors.add(:itakustart, "に関係するエラーを追加")
-      #errors[:base] << "モデル全体に関係するエラーを追加"
+     if itakustart.to_date <= itakuend.to_date
+     #if Time.parse(itakustart) <= Time.parse(itakuend)
+       #true
+       #@contract.valid = false
+     else
+       ##return [false, ::I18n.t(:invalid_contract_kikan, scope: "validation.contract.contract_kikan")]
+       false
+       #raise RuntimeError.new("itakukikan is not valid")
+       #@contract.valid?
+       errors.add(:itakustart, "itakukikan is not valid")
+     end
     end
   end
 
